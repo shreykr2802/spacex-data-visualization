@@ -1,12 +1,9 @@
-import { takeEvery, all, takeLatest } from 'redux-saga/effects';
-
-import spaceXDataSaga from './spaceXSaga';
-
-import {SPACEX_DATA_FETCH_START} from '../actions/actionTypes';
+import { takeEvery } from "redux-saga/effects";
+import spaceXDataSaga from "./spaceXSaga";
+import { fetchDataStart } from "../slices/spaceXSlice";
 
 export function* watchSpaceXData() {
-    yield takeEvery(SPACEX_DATA_FETCH_START, spaceXDataSaga);
+  yield takeEvery(fetchDataStart, spaceXDataSaga);
 }
 
-
-export default { watchSpaceXData }
+export default watchSpaceXData;
