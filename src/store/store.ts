@@ -3,10 +3,12 @@ import thunk from "redux-thunk";
 import createSagaMiddleware from "redux-saga";
 
 import spaceXReducer from "./slices/spaceXSlice";
+import searchReducer from './slices/searchSlice';
 import { watchSpaceXData } from "./sagas/index";
 
 const rootReducer = combineReducers({
   spaceX: spaceXReducer,
+  search: searchReducer
 });
 
 export type RootState = ReturnType<typeof rootReducer>;

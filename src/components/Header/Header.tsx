@@ -1,29 +1,30 @@
-import React, { useState } from "react";
+import { useDispatch, useSelector } from "react-redux";
+import { setSearchTerm } from "../../store/slices/searchSlice";
+import { RootState } from "../../store/store";
 
 const Header = () => {
-  const [searchTerm, setSearchTerm] = useState<string>("");
+  const dispatch = useDispatch();
+  const searchTerm = useSelector((state: RootState) => state.search.searchTerm);
 
   return (
     <div className="navbar-fixed">
       <nav>
-        <div className="nav-wrapper deep-purple sticky">
-          <form>
-            <div className="input-field">
-              <input
-                id="search"
-                type="search"
-                required
-                value={searchTerm}
-                onChange={(event) => setSearchTerm(event.target.value)}
-              />
-              <label className="label-icon">
-                <i className="material-icons">search</i>
-              </label>
-              <i className="material-icons" onClick={() => setSearchTerm("")}>
-                close
+        <div className="nav-wrapper deep-purple">
+          <div className="input-field">
+            <input
+              id="search"
+              type="search"
+              required
+              value={searchTerm}
+              onChange={(event) => dispatch(setSearchTerm(event.target.value))}
+            />
+            <label className="label-icon">
+              <i className="material-icons">search</i>
+            </label>
+            <i className="material-icons" onClick={() => dispatch(setSearchTerm(""))}>
+              close
               </i>
-            </div>
-          </form>
+          </div>
         </div>
       </nav>
     </div>
