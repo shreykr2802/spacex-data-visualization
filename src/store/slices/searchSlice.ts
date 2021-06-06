@@ -1,11 +1,13 @@
 import { createSlice } from "@reduxjs/toolkit";
 
 interface SearchState {
-  searchTerm: string
+  searchTerm: string,
+  filterBy: string
 }
 
 const initialState = {
-  searchTerm: ''
+  searchTerm: '',
+  filterBy: ''
 } as SearchState;
 
 const searchSlice = createSlice({
@@ -15,9 +17,12 @@ const searchSlice = createSlice({
     setSearchTerm: (state, action) => {
       state.searchTerm = action.payload
     },
+    setFilterBy: (state, action) => {
+      state.filterBy = action.payload
+    },
   },
 });
 
-export const { setSearchTerm } =
+export const { setSearchTerm, setFilterBy } =
   searchSlice.actions;
 export default searchSlice.reducer;

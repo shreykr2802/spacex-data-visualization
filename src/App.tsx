@@ -4,6 +4,7 @@ import "./App.css";
 import { fetchDataStart } from "./store/slices/spaceXSlice";
 import Header from "./components/Header/Header";
 import Contents from "./containers/Contents/Contents";
+import SideNav from "./components/SideNav/SideNav";
 
 function App() {
   const dispatch = useDispatch();
@@ -16,6 +17,7 @@ function App() {
     <div>
       <Header />
       <Contents />
+      <SideNav />
     </div>
   );
 }
