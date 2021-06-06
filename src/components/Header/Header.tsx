@@ -3,6 +3,7 @@ import { useDispatch, useSelector } from "react-redux";
 import { setSearchTerm } from "../../store/slices/searchSlice";
 import { RootState } from "../../store/store";
 import "materialize-css/dist/css/materialize.min.css";
+import SideNavButton from "../SideNav/SideNavButton";
 const M = require("materialize-css/dist/js/materialize.min.js");
 
 const filterInfo: any = {
@@ -22,6 +23,7 @@ const Header = () => {
 
   useEffect(() => {
     var elem = document.querySelector(".sidenav");
+    // eslint-disable-next-line
     var instance = M.Sidenav.init(elem, {
       edge: "right",
       inDuration: 250
@@ -52,9 +54,7 @@ const Header = () => {
           <span className="filerInfo">{filterInfo[filterBy]}</span>
         </div>
         <div className="col s1">
-          <a href="#" data-target="slide-out" className="top-nav sidenav-trigger show-on-large right">
-            <i className="material-icons">filter_list</i>
-          </a>
+          <SideNavButton />
         </div>
       </nav>
     </div>

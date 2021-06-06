@@ -11,10 +11,10 @@ const Contents = () => {
     const [dataToShow, setDataToShow] = useState<any[]>([]);
     const filterBy = useSelector((state: RootState) => state.search.filterBy);
 
-    const sortData = (a: any, b: any) => b.launch_year - a.launch_year;
+    const sortData = (a: any, b: any) => b.flight_number - a.flight_number;
 
     useEffect(() => {
-        setDataToShow(spaceXData.slice().sort((a, b) => b.launch_year - a.launch_year));
+        setDataToShow(spaceXData.slice().sort(sortData));
     }, [spaceXData]);
 
     useEffect(() => {
@@ -28,10 +28,10 @@ const Contents = () => {
             setDataToShow(sortedSapcexData.filter((data) => data.rocket.rocket_name.toLowerCase().indexOf(searchTerm.toLowerCase()) >= 0).slice().sort(sortData));
         }
         if (filterBy === 'failure') {
-            setDataToShow(sortedSapcexData.filter((data) => !data.launch_success).slice().sort(sortData));
+            setDataToShow(sortedSapcexData.filter((data) => !data.launch_success && (!data.upcoming)).slice().sort(sortData));
         }
         if (filterBy === 'success') {
-            setDataToShow(sortedSapcexData.filter((data) => data.launch_success).slice().sort(sortData));
+            setDataToShow(sortedSapcexData.filter((data) => data.launch_success && (!data.upcoming)).slice().sort(sortData));
         }
         if (filterBy === 'no') {
             setDataToShow(sortedSapcexData.filter((data) => !data.upcoming).slice().sort(sortData));
@@ -45,8 +45,8 @@ const Contents = () => {
             startDate.setDate(startDate.getDate() - 7);
             setDataToShow(sortedSapcexData.filter((data) => {
                 let launchDate = new Date(data.launch_date_local);
-                return (launchDate.getTime() <= endDate.getTime() && launchDate.getTime() >= startDate.getTime())
-            }).slice().sort((a, b) => b.launch_year - a.launch_year));
+                return (launchDate.getTime() <= endDate.getTime() && launchDate.getTime() >= startDate.getTime()) && (!data.upcoming)
+            }).slice().sort(sortData));
         }
         if (filterBy === 'lastmonth') {
             let startDate = new Date();
@@ -54,8 +54,8 @@ const Contents = () => {
             startDate.setDate(startDate.getDate() - 30);
             setDataToShow(sortedSapcexData.filter((data) => {
                 let launchDate = new Date(data.launch_date_local);
-                return (launchDate.getTime() <= endDate.getTime() && launchDate.getTime() >= startDate.getTime())
-            }).slice().sort((a, b) => b.launch_year - a.launch_year));
+                return (launchDate.getTime() <= endDate.getTime() && launchDate.getTime() >= startDate.getTime()) && (!data.upcoming)
+            }).slice().sort(sortData));
         }
         if (filterBy === 'lastyear') {
             let startDate = new Date();
@@ -63,10 +63,10 @@ const Contents = () => {
             startDate.setDate(startDate.getDate() - 365);
             setDataToShow(sortedSapcexData.filter((data) => {
                 let launchDate = new Date(data.launch_date_local);
-                return (launchDate.getTime() <= endDate.getTime() && launchDate.getTime() >= startDate.getTime())
-            }).slice().sort((a, b) => b.launch_year - a.launch_year));
+                return (launchDate.getTime() <= endDate.getTime() && launchDate.getTime() >= startDate.getTime()) && (!data.upcoming)
+            }).slice().sort(sortData));
         }
-    }, [filterBy, spaceXData]);
+    }, [filterBy, spaceXData, searchTerm]);
 
     return (
         <div className="row">
