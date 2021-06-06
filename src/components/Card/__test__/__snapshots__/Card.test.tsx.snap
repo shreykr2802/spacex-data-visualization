@@ -1,0 +1,170 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`matches snapshot 1`] = `
+<div
+  className="col l3 m4 s12"
+>
+  <div
+    className="card z-depth-5"
+  >
+    <div
+      className="card-image waves-effect waves-block waves-light right"
+    >
+      <img
+        alt="Patch"
+        className="activator responsive-img"
+        src="https://images2.imgbox.com/40/e3/GypSkayF_o.png"
+      />
+    </div>
+    <div
+      className="card-content"
+    >
+      <span
+        className="flow-text"
+      >
+        Flight No: 
+        <strong>
+          1
+        </strong>
+      </span>
+      <span
+        className="card-title activator grey-text text-darken-1"
+      >
+        <h5
+          className="flow-text"
+        >
+          FalconSat
+        </h5>
+        <i
+          className="material-icons right"
+        >
+          more_vert
+        </i>
+      </span>
+      <div>
+        <span>
+          <h5
+            className="flow-text"
+          >
+            Rocket Name: 
+            <strong>
+              Falcon 1
+            </strong>
+          </h5>
+        </span>
+        <span>
+          <h5
+            className="flow-text"
+          >
+            Rocket Type: 
+            <strong>
+              Merlin A
+            </strong>
+          </h5>
+        </span>
+      </div>
+      <div>
+        <span>
+          <h5
+            className="flow-text red-text status"
+          >
+            Launch Failed
+          </h5>
+        </span>
+        <span>
+          <h5
+            className="flow-text red-text status"
+          >
+            Landing Failed
+          </h5>
+        </span>
+      </div>
+      <p>
+        <a
+          href="https://www.youtube.com/watch?v=0a_00nJ_Y88"
+          rel="noreferrer"
+          target="_blank"
+        >
+          Watch the Video
+        </a>
+      </p>
+      <p>
+        <a
+          href="https://en.wikipedia.org/wiki/DemoSat"
+          rel="noreferrer"
+          target="_blank"
+        >
+          Wikipedia
+        </a>
+      </p>
+    </div>
+    <div
+      className="card-reveal"
+    >
+      <span
+        className="card-title grey-text text-darken-4"
+      >
+        <h5>
+          FalconSat
+        </h5>
+        <i
+          className="material-icons right"
+        >
+          close
+        </i>
+      </span>
+      <p
+        className="flow-text"
+      >
+        Engine failure at 33 seconds and loss of vehicle
+      </p>
+      <div>
+        <span
+          className="flow-text status brown-text"
+        >
+          <h5>
+            Payload
+          </h5>
+        </span>
+        <div>
+          <span>
+            <h5
+              className="flow-text status"
+            >
+              ID: 
+              <span
+                className="light-blue-text accent-1"
+              >
+                FalconSAT-2
+              </span>
+            </h5>
+            <h5
+              className="flow-text status"
+            >
+              Type: 
+              <span
+                className="light-blue-text accent-1"
+              >
+                Satellite
+              </span>
+            </h5>
+            <h5
+              className="flow-text status"
+            >
+              Customer: 
+              <span
+                className="light-blue-text accent-1"
+              >
+                DARPA
+              </span>
+            </h5>
+          </span>
+          <div
+            className="divider"
+          />
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+`;

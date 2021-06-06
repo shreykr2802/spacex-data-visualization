@@ -1,0 +1,61 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`matches snapshot 1`] = `
+<div
+  className="navbar-fixed row"
+>
+  <nav
+    className="nav-wrapper deep-purple"
+  >
+    <div
+      className="input-field col s9"
+    >
+      <input
+        id="search"
+        onChange={[Function]}
+        placeholder="Search by Rocket Name"
+        required={true}
+        type="search"
+        value=""
+      />
+      <label
+        className="label-icon"
+      >
+        <i
+          className="material-icons"
+        >
+          search
+        </i>
+      </label>
+      <i
+        className="material-icons"
+        onClick={[Function]}
+      >
+        close
+      </i>
+    </div>
+    <div
+      className="col s2"
+    >
+      <span
+        className="filerInfo"
+      />
+    </div>
+    <div
+      className="col s1"
+    >
+      <a
+        className="top-nav sidenav-trigger show-on-large right"
+        data-target="slide-out"
+        href="#"
+      >
+        <i
+          className="material-icons"
+        >
+          filter_list
+        </i>
+      </a>
+    </div>
+  </nav>
+</div>
+`;
