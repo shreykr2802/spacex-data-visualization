@@ -8,20 +8,16 @@ Users can search the mission based upon rocket name.
 Users can filter the data based on 
 <ol>
     <li><h4>By Launch Date</h4></li>
-    <li>
         <ul>
             <li>Last Week</li>
             <li>Last Month</li>
             <li>Last Year</li>
         </ul>
-    </li>
     <li><h4>By Launch Status</h4></li>
-    <li>
         <ul>
             <li>Failure</li>
             <li>Success</li>
         </ul>
-    </li>
     <li><h4>Is it upcoming?</h4></li>
 <ol>
 
